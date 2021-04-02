@@ -55,9 +55,9 @@ services:
     ports:
       - 5002:5000
       - 9229:9229            #debug port
-  spring-java: #docker run -it -v ${PWD}:/work -w /work -p 5002:5000 aimvector/nodejs:1.0.0 /bin/sh
+  spring-java: #docker run -it -v ${PWD}:/work -w /work -p 5002:5000 penjdk:14.0-jdk-buster:1.0.0 /bin/sh
     container_name: spring-java
-    image: aimvector/spring-java:1.0.0
+    image: openjdk:11-jdk
     build:
       context: ./springboot/java/
       target: debug
